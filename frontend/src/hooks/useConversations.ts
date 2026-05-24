@@ -34,7 +34,7 @@ export function useConversations(spaceId: string) {
   return {
     conversations,
     isLoading,
-    createConversation: createMutation.mutateAsync,
+    createConversation: (title?: string) => createMutation.mutateAsync(title as string),
     deleteConversation: deleteMutation.mutate,
     updateConversation: updateMutation.mutate,
   }
